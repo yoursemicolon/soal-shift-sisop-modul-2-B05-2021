@@ -19,7 +19,7 @@ Pada soal ini, kita diminta untuk membuat program C dengan ketentuan sebagai ber
 3. (c) Extract ```zip``` file yang telah didownload.
 4. (d) Pindahkan hasil extract ke folder ```Musyik, Fylm dan Pyoto``` (hanya file saja).
 5. (e) Jalankan semua hal di atas secara otomatis pada 09 April 16.22 WIB.
-6. (f) ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip``` (semua folder di delete dan hanya menyisakan ```zip```) dan jalankan pada otomatis pada 09 April 22.22 WIB.
+6. (f) ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip``` (semua folder di delete dan hanya menyisakan ```zip```) dan jalankan otomatis pada 09 April 22.22 WIB.
 
 **Note**
 * Semua poin dijalankan oleh 1 script di latar belakang
