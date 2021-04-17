@@ -175,7 +175,10 @@ Hasil eksekusi program: <br>
 ### Kendala
 
 ### Referensi
-
+* http://www.csc.villanova.edu/~mdamian/Past/csc2405sp13/notes/Exec.pdf
+* https://askubuntu.com/questions/172629/how-do-i-move-all-files-from-one-folder-to-another-using-the-command-line
+* https://www.techiedelight.com/print-current-date-and-time-in-c/
+* http://www.cplusplus.com/reference/ctime/localtime/
 
 <a name="soal2"></a>
 ## Soal 2
