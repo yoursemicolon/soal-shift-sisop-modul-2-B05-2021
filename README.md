@@ -127,9 +127,42 @@ Berikut hasil eksekusinya. <br>
 
 ### Jawab 1f
 
+### Kendala
+
+### Referensi
+
 
 <a name="soal2"></a>
 ## Soal 2
 
+### Jawab 2a
+
+### Jawab 2b
+
+### Jawab 2c
+
+### Jawab 2d
+
+### Jawab 2e
+
+### Kendala
+
+### Referensi
+
 <a name="soal3"></a>
 ## Soal 3
+
+### Jawab 3a
+
+### Jawab 3b
+
+### Jawab 3c
+
+### Jawab 3d
+
+### Jawab 3e
+
+### Kendala
+
+### Referensi
+
