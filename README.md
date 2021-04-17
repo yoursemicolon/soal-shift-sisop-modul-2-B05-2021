@@ -114,18 +114,63 @@ void moveFiles(int indeks) {
 Berikut hasil eksekusinya. <br>
 (hasil screenshoot)
 
-
-
-
-
-
-
-
-### Jawab 1d
-
 ### Jawab 1e
+Untuk menjalankannya secara otomatis pada 09 April 16.22 WIB, digunakan process ```daemon```. Untuk menyesuaikan dengan setting waktu dengan local time, kami menggunakan library ```time.h``` dan ```tm structure``` pada C.
+```c
+    //obtain the current time
+    time_t now = time(NULL);
+    time(&now);
+
+    // return a pointer to a tm structure with its members
+    struct tm *local = localtime(&now);
+
+    int month, day, hour, minute, second;
+    month = local -> tm_mon + 1;
+    day = local -> tm_mday;
+    hour = local -> tm_hour;
+    minute = local -> tm_min;
+```
+Untuk memeriksanya, digunakan perintah
+```c
+if(isNowTheBirthday(month, day, minute) && bday_hour-6 == hour) {
+    // do all instruction before
+}
+```
+Hasil eksekusi: <br>
+(hasil screenshoot)
 
 ### Jawab 1f
+Tepat pada 09 April 22.22 WIB, ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip```. Masih menggunakan proses ```daemon``` dan dengan setting waktu yang sudah disesuaikan. Command ```zip -r``` akan menghapus folder original.
+```c
+// 1f zip all stev folders and delete original folders
+void zipStevanyFolders() {
+    pid_t child_id;
+    int status;
+
+    child_id = fork();
+    if(child_id == 0) {
+        char *argv[] = {"zip", "-q", "-r", "-m", "Lopyu_Stevanny.zip", stev_foldername[0], stev_foldername[1], stev_foldername[2], NULL};
+        execv("/usr/bin/zip", argv);
+    }
+    while(wait(&status) > 0);
+}
+```
+Untuk menghapus folder lainnya, yaitu folder hasil extract yang sudah kosong digunakan command ```rm -d```.
+```c
+void removeExtractFolders() {
+    pid_t child_id;
+    int status;
+
+    child_id = fork();
+    if(child_id == 0) {
+        char *argv[] = {"rm", "-d", extract_foldername[0], extract_foldername[1], extract_foldername[2], NULL};
+        execv("/usr/bin/rm", argv);
+    }
+    while(wait(&status) > 0);
+}
+```
+Hasil eksekusi program: <br>
+(hasil screenshoot)
 
 ### Kendala
 
