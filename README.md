@@ -147,7 +147,11 @@ Hasil eksekusi: <br>
 (hasil screenshoot)
 
 ### Jawab 1f
-Tepat pada 09 April 22.22 WIB, ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip```. Masih menggunakan proses ```daemon``` dan dengan setting waktu yang sudah disesuaikan. Command ```zip -r``` akan menghapus folder original.
+Tepat pada 09 April 22.22 WIB, ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip```. Masih menggunakan proses ```daemon``` dan dengan setting waktu yang sudah disesuaikan. Berikut perintah untuk memeriksa setting waktunya.
+```c
+if(isNowTheBirthday(month, day, minute) && bday_hour == hour)
+```
+Dan berikut adalah perintan yang harus dijalankan. Command ```zip -r``` akan men-zip file dan menghapus folder original.
 ```c
 // 1f zip all stev folders and delete original folders
 void zipStevanyFolders() {
