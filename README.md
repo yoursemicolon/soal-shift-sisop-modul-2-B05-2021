@@ -14,12 +14,19 @@ Kelompok B05
 <a name="soal1"></a>
 ## Soal 1
 Pada soal ini, kita diminta untuk membuat program C dengan ketentuan sebagai berikut.
-1. (a) Buat folder dengan nama ```Musyik, Fylm dan Pyoto``` (tidak boleh menggunakan ```mkdir()```).
+1. (a) Buat folder dengan nama ```Musyik, Fylm dan Pyoto```.
 2. (b) Download ```zip``` file musik, film dan foto dari link yang disediakan.
 3. (c) Extract ```zip``` file yang telah didownload.
 4. (d) Pindahkan hasil extract ke folder ```Musyik, Fylm dan Pyoto``` (hanya file saja).
 5. (e) Jalankan semua hal di atas secara otomatis pada 09 April 16.22 WIB.
-6. (f) ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip``` (semua folder di delete dan hanya menyisakan ```zip```)
+6. (f) ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip``` (semua folder di delete dan hanya menyisakan ```zip```) dan jalankan pada otomatis pada 09 April 22.22 WIB.
+
+**Note**
+* Semua poin dijalankan oleh 1 script di latar belakang
+* Tidak boleh menggunakan fungsi system(), mkdir(), dan rename()
+* Tidak boleh pake cron 
+* Menggunakan fork dan exec
+
 
 ### Jawab 1a
 Karena tidak boleh menggunakan ```mkdir()```, maka digunakan ```fork``` dan ```exec``` agar dapat menjalankan perintah secara bersamaan yaitu ```fork``` untuk create new process dan ```exec``` untuk memanggil command ```mkdir```. Disini kami menggunakan ```wait``` untuk delay sebelum ke proses selanjutnya.
