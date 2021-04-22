@@ -45,7 +45,7 @@ void makeFolders() {
 }
 ```
 Dari hasil eksekusi, terbuat folder ```Musyik, Fylm dan Pyoto```. <br>
-(hasil screenshoot)
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-a.png" width="600"></img>
 
 ### Jawab 1b
 Mendownload zip file dari link yang telah disediakan. Kami memanggil fungsi ```downloadFiles()``` dari fungsi ```main``` dan menggunakan ```exec``` untuk memanggil command ```wget```.
@@ -64,7 +64,7 @@ void downloadFiles(int indeks) {
 }
 ```
 Dari hasil eksekusi di atas, terdownload folder yang bernama ```Musik_for_Stevany```, ```Foto_for_Stevany``` dan ```Film_for_Stevany```. <br>
-(hasil screenshoot)
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-b.png" width="600"></img>
 
 ### Jawab 1c
 Extract ```zip``` file yang didownload dengan command ```unzip```.
@@ -82,8 +82,6 @@ void extractFiles(int indeks) {
     while(wait(&status) > 0);
 }
 ```
-Berikut hasil dari extract. <br>
-(hasil screenshoot)
 
 ### Jawab 1d
 Kemudian, pindahkan file yang ada di dalam folder hasil extract ```MUSIK```, ```FOTO```, dan ```FILM``` masing-masing ke dalam folder ```Musyik```, ```Pyoto```, dan ```Fylm``` (hanya filenya saja). Untuk memindahkan isi dari masing-masing folder, kami menggunakan perintah berikut.
@@ -119,7 +117,7 @@ void moveFiles(int indeks) {
 }
 ```
 Berikut hasil eksekusinya. <br>
-(hasil screenshoot)
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-d.png" width="600"></img>
 
 ### Jawab 1e
 Untuk menjalankannya secara otomatis pada 09 April 16.22 WIB, digunakan process ```daemon```. Untuk menyesuaikan dengan setting waktu dengan local time, kami menggunakan library ```time.h``` dan ```tm structure``` pada C.
@@ -140,11 +138,11 @@ Untuk menjalankannya secara otomatis pada 09 April 16.22 WIB, digunakan process 
 Untuk memeriksanya, digunakan perintah
 ```c
 if(isNowTheBirthday(month, day, minute) && bday_hour-6 == hour) {
-    // do all instruction before
+    // do all instructions before
 }
 ```
 Hasil eksekusi: <br>
-(hasil screenshoot)
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-e.png" width="600"></img>
 
 ### Jawab 1f
 Tepat pada 09 April 22.22 WIB, ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip```. Masih menggunakan proses ```daemon``` dan dengan setting waktu yang sudah disesuaikan. Berikut perintah untuk memeriksa setting waktunya.
@@ -181,7 +179,7 @@ void removeExtractFolders() {
 }
 ```
 Hasil eksekusi program: <br>
-(hasil screenshoot)
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-f.png" width="600"></img>
 
 ### Kendala
 
