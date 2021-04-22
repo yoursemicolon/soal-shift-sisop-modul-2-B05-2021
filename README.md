@@ -63,7 +63,7 @@ void downloadFiles(int indeks) {
     while(wait(&status) > 0);
 }
 ```
-Dari hasil eksekusi di atas, terdownload folder yang bernama ```Musik_for_Stevany```, ```Foto_for_Stevany``` dan ```Film_for_Stevany```. <br>
+Dari hasil eksekusi di atas, terdownload file zip yang bernama ```Musik_for_Stevany```, ```Foto_for_Stevany``` dan ```Film_for_Stevany```. <br>
 <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-b.png" width="600"></img>
 
 ### Jawab 1c
