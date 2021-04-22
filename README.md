@@ -182,6 +182,9 @@ Hasil eksekusi program: <br>
 <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-f.png" width="600"></img>
 
 ### Kendala
+* Awalnya program tidak berjalan ketika di execute, setelah kodingan dimasukkan ke dalam fungsi terpisah baru bisa tereksekusi.
+* Bingung dengan penggunaan fork dan exec
+* Belum tau cara mendapatkan setting waktu di local time
 
 ### Referensi
 * http://www.csc.villanova.edu/~mdamian/Past/csc2405sp13/notes/Exec.pdf
