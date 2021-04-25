@@ -281,6 +281,8 @@ _Source Code_
 
 **PENJELASAN**
 
+Berdasarkan source code 2c dan 2d diatas, soal 2c digunakan untuk memindahkan foto peliharaan ke dalam folder sesuai dengan kategori yang sesuai. kemudian, soal 2d digunakan untuk memindahkan foto peliharaan yang di dalam satu foto bisa terdapat lebih dari satu foto peliharaan dan di sesuaikan berdasarnakn nama kategori hewannya.
+
 ### Jawab 2e
 Di setiap folder buatlah sebuah file `"keterangan.txt"` yang berisi nama dan umur semua peliharaan dalam folder tersebut. **Format harus sesuai contoh**.
 
@@ -307,6 +309,8 @@ _Source Code_
 ```
 
 **PENJELASAN**
+
+Berdasarkan source code pada soal 2e ini, akan membuat file ```keterangan.txt``` . kemudian akan menyalin ```"nama : "``` ke dalam ket_file. lalu, menggabungkan data nama hewan, menggabungkan umur, serta menambahkan kata tahun setelah data umur.
 
 **Output**
 - folder petshop berisi file foto-foro peliharaan yang sudah di unzip.
