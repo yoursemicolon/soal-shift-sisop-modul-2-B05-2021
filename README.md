@@ -298,7 +298,8 @@ _Source Code_
 
 **PENJELASAN**
 
-**_Output_**
+**Output**
+1. 
 
 ### Test Keterangan
 cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi keterangan pada 2e yang ada pada folder masing-masing hewan.
