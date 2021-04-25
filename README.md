@@ -231,6 +231,7 @@ void BukaZIP()
 ```
 
 **PENJELASAN**
+
 Berdasarkan source code diatas, fungsi BukaZIP digunakan untuk meng-Unzip folder pets.zip yang berformat **.jpg** saja dan menghapus folder-folder yang tidak penting, kemudian akan dipindah ke dalam folder baru bernama ```petshop``` . Dikarenakan tidak boleh menggunakan ``mkdir`` maka proses dilakukan menggunakan ``fork`` dan ``exec``.
 
 ### Jawab 2b
