@@ -227,6 +227,7 @@ _Source Code_
 ```
 
 **_PENJELASAN_**
+
 **_Output_**
 
 ### Jawab 2c
@@ -243,6 +244,7 @@ _Source Code_
 ```
 
 **_PENJELASAN_**
+
 **_Output_**
 
 ### Jawab 2e
@@ -261,10 +263,11 @@ _Source Code_
 ```
 
 **_PENJELASAN_**
+
 **_Output_**
 
-**Test Keterangan**
-cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk mengetest jumlah 
+### Test Keterangan
+cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi file foto yang ada pada folder masing-masing hewan.
 menghasilkan output sebagai berikut:
 
 ### Kendala
@@ -273,7 +276,7 @@ menghasilkan output sebagai berikut:
 <img width="120" alt="Screen Shot 2021-04-25 at 09 16 04" src="https://user-images.githubusercontent.com/72669398/115978029-1aa3dc80-a5a7-11eb-8e30-5a22f7da5665.png">
 
 - ketika mencoba test nomer 2e menggunakan link ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02``` hasil tidak sama dengan jumlah isi file, hasilnya terkali 2, seperti dibawah ini:
-
+<img width="278" alt="Screen Shot 2021-04-25 at 02 28 43" src="https://user-images.githubusercontent.com/72669398/115978056-4f179880-a5a7-11eb-98c0-bf5e7b89e499.png">
 
 
 <a name="soal3"></a>
