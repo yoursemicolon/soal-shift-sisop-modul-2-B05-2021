@@ -311,10 +311,13 @@ _Source Code_
 **Output**
 - folder petshop berisi file foto-foro peliharaan yang sudah di unzip.
 <img width="1311" alt="folder petshop" src="https://user-images.githubusercontent.com/72669398/115989566-36c86d80-a5e9-11eb-9438-cbb6e6a18d40.png">
+
 - folder petshop berisi folder-folder nama masing-masing peliharaan dan keterangan berisi nama dan umur peliharaan.
 ![Isi petshop](https://user-images.githubusercontent.com/72669398/115989764-25339580-a5ea-11eb-8918-fc541d2065d5.jpg)
+
 - isi folder salah satu peliharaan. misal: cat.
 ![isi folder cat](https://user-images.githubusercontent.com/72669398/115989806-58762480-a5ea-11eb-83a8-e776f227dd55.jpg)
+
 - isi keterangan.txt dari folder cat.
 ![keterangan cat](https://user-images.githubusercontent.com/72669398/115989807-5a3fe800-a5ea-11eb-9990-4c45dcee26fb.jpg)
 
