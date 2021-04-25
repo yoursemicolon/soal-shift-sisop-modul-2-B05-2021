@@ -303,6 +303,7 @@ _Source Code_
 ### Test Keterangan
 cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi keterangan pada 2e yang ada pada folder masing-masing hewan.
 menghasilkan output sebagai berikut:
+![hasil ceket](https://user-images.githubusercontent.com/72669398/115988941-fd423300-a5e5-11eb-8c85-8a9ae2690dd1.jpg)
 
 ### Kendala
 - Bingung dengan penggunaan fork dan exec, awalnya saya kira dengan mendeklasrasikan fork sekali bisa digunakan pada proses lain ternyata tidak bisa. Jadi, saya membuat fungsi func yang gunanya supaya tidak menggunakan fork berulang kali.
