@@ -232,7 +232,6 @@ void BukaZIP()
 
 **PENJELASAN**
 
-Berdasarkan source code diatas, fungsi BukaZIP digunakan untuk meng-Unzip folder pets.zip yang berformat **.jpg** saja dan menghapus folder-folder yang tidak penting, kemudian akan dipindah ke dalam folder baru bernama ```petshop``` . Dikarenakan tidak boleh menggunakan ``mkdir`` maka proses dilakukan menggunakan ``fork`` dan ``exec``.
 
 ### Jawab 2b
 Foto peliharaan perlu dikategorikan sesuai jenis peliharaan, maka kamu harus membuat folder untuk setiap jenis peliharaan yang ada dalam zip. Karena kamu tidak mungkin memeriksa satu-persatu, maka program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
@@ -250,7 +249,6 @@ _Source Code_
 
 **PENJELASAN**
 
-Berdasarkan source code diatas, digunakan untuk membuat folder baru kosong yang bernamakan masing-masing peliharaan dan nanti akan diisi oleh file foto-foto peliharaan dengan source code nomor 2c. co : ```/petshop/cat```.
 
 ### Jawab 2c
 Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
@@ -339,18 +337,181 @@ menghasilkan output sebagai berikut:
 
 <a name="soal3"></a>
 ## Soal 3
+Pada soal ini, kita diminta untuk membuat program C dengan ketentuan sebagai berikut.
+1. (a) Setiap 40 detik buat folder dengan nama sesuai timestamp ```[YYYY-mm-dd_HH:ii:ss]```
+2. (b) Setiap direktori yang sudah dibuat diisi dengan 10 gambar yang didownload dari https://picsum.photos/, dimana setiap gambar akan didownload setiap 5 detik. Setiap gambar yang didownload akan diberi nama dengan format timestamp ```[YYYY-mm-dd_HH:ii:ss]``` dan gambar tersebut berbentuk persegi dengan ukuran (n%1000) + 50 pixel dimana n adalah detik Epoch Unix.
+3. (c) Setelah direktori telah terisi dengan 10 gambar, program tersebut akan membuat sebuah file```status.txt```, dimana didalamnya berisi pesan “Download Success” yang terenkripsi dengan teknik Caesar Cipher dan dengan shift 5. Karena Ranora orangnya perfeksionis dan rapi, dia ingin setelah file tersebut dibuat, direktori akan di zip dan direktori akan didelete, sehingga menyisakan hanya file zip saja.
+4. (d) Ranora harus membuat program bash dimana program "Killer" tersebut akan menterminasi semua proses program yang sedang berjalan dan akan menghapus dirinya sendiri setelah program dijalankan.
+5. (e) Pembimbing magang Ranora juga ingin nantinya program utama yang dibuat Ranora dapat dijalankan di dalam dua mode. Untuk mengaktifkan mode pertama, program harus dijalankan dsdengan argumen -z, dan Ketika dijalankan dalam mode pertama, program utama akan langsung menghentikan semua operasinya Ketika program Killer dijalankan. Sedangkan untuk mengaktifkan mode kedua, program harus dijalankan dengan argumen -x, dan Ketika dijalankan dalam mode kedua, program utama akan berhenti namun membiarkan proses di setiap direktori yang masih berjalan hingga selesai 
 
 ### Jawab 3a
+```
+ int forcheck = 0;
+        time_t timer;
+        char stamp[50];
+        struct tm *tm_info;
+        int status = 0;
+        timer = time(NULL);
+        tm_info = localtime(&timer);
 
+        strftime(stamp, 50, "%Y-%m-%d_%H:%M:%S", tm_info);
+
+        if (fork() == 0)
+        {
+            char *argv[] = {"mkdir", stamp, NULL};
+            execv("/bin/mkdir", argv);
+        }
+        sleep(1);
+        ...
+```
+Yang pertama harus dilakukan adalah melakuan inisialisasi timer ```time_t timer``` dan meng-assign ```time(NULL)``` ke timer tersebut. <br> Kemudian menginisialisasi ```struct tm *tm_info``` yang akan membantu kita untuk mengubah ```timer``` menjadi waktu local dengan ```localtime(&timer)```. <br> Kemudian mengubahnya menjadi char dengan format yang sesuai dengan ```strftime(stamp, 50, "%Y-%m-%d_%H:%M:%S", tm_info)```.
+<br>
+Kemudian melakukan spawning process yang akan membuat directory dengan format ```%Y-%m-%d_%H:%M:%S``` <br>
+```
+if (fork() == 0)
+        {
+            char *argv[] = {"mkdir", stamp, NULL};
+            execv("/bin/mkdir", argv);
+        }
+sleep(1);
+```
+Di sini menggunakan sleep untuk memastikan proses pembuatan directory selesai sebelum lanjut ke proses selanjutnya.
 ### Jawab 3b
+```
+if (fork() == 0)
+        {
+            chdir(stamp);
+            for (int i = 0; i < 10; i++)
+            {
+                //melakukan inisialisasi timer baru untuk tiap foto yang didownload
+                printf("%d\n", i);
+                time_t timer2;
+                char stamp2[50];
+                struct tm *tm_info2;
+                // di sini melakukan pengurangan waktu sebanyak 1 detik karena sebelumnya melakukan sleep selama satu detik untuk menunggu direktori dibuat
+                timer2 = time(NULL);
+                tm_info2 = localtime(&timer2);
+                tm_info2->tm_sec -= 1;
+                mktime(tm_info2);
 
+                strftime(stamp2, 50, "%Y-%m-%d_%H:%M:%S", tm_info2);
+
+                int size = (int)timer2 % 1000 + 50;
+                char link[50];
+                sprintf(link, "https://picsum.photos/%d", size);
+                if (fork() == 0)
+                {
+                    char *argv[] = {"wget", link, "-O", stamp2, NULL};
+                    execv("/bin/wget", argv);
+                }
+
+                printf("sleeping\n");
+                sleep(5);
+                printf("now awake/n");
+                forcheck++;
+            }
+        }
+```
+Pertama masuk ke firectory yang telah dibuat dengan ```chdir(stamp)``` <br>
+Kemudian dalam dalam ```for (int i = 0; i < 10; i++)```
+- Melakukan inisialisasi ```time_t timer2``` yang akan disimpan sebagai string ke ```stamp2```
+- Melakukan pengurangan waktu sebanyak 1 detik karena setelah membuat directory telah dilakukan ```sleep(1)```. Hal ini dilakukan dengan
+  ```
+  tm_info2->tm_sec -= 1;
+  mktime(tm_info2);
+  ```
+- Kemudian membuat variable ```int size``` yang akan menyimpan ukuran gambar ```(int)timer2 % 1000 + 50```
+- Menyimpan link dengan ukuran ke variable ```char link[50]``` dengan menggunakan ```sprintf(link, "https://picsum.photos/%d", size)```
+- Membuat proses baru dengan execv dengan ```wget```
+```
+if (fork() == 0)
+                {
+                    char *argv[] = {"wget", link, "-O", stamp2, NULL};
+                    execv("/bin/wget", argv);
+                }
+
+ printf("sleeping\n");
+ sleep(5);
+ printf("now awake/n");
+ forcheck++;
+```
+- Menggunakan ```sleep(5)``` untuk melakukannya setiap 5 detik.
+- ```forcheck++``` akan digunakan saat pembuatan ```status.txt``` dan menandakan loop telah selesai
 ### Jawab 3c
+```
+if (forcheck == 10) // pada saat awal menjalankan program langsung membuat file status.txt jadi menggunakan check untuk membuat di akhir loop
+        {
+            char success[] = {"Download Success"};
+            for (int i = 0; i < strlen(success); i++)
+            {
+                //eksepsi agar whitespace tidak diencrypt
+                if (success[i] != 32)
+                {
+                    //untuk setiap karakter di aatas ascii 117 balik ke awal
+                    if (success[i] > 117)
+                    {
+                        success[i] -= 21;
+                        continue;
+                    }
+                    success[i] += 5;
+                }
+            }
+            // while (wait(&status) > 0)
+            //     ;
+            printf("creating status.txt");
+            FILE *fPtr = NULL;
+            fPtr = fopen("status.txt", "w");
+            fputs(success, fPtr);
+            fclose(fPtr);
+        }
+```
+- Meyimpan string ```Download Success``` ke dalam ```char success[]```
+- Untuk setiap karakter dalam string melakukan enkripsi Caesar Cipher dengan shift 5
+- ```if (success[i] != 32)``` agar spasi tidak ikut terenkripsi
+- Ketika huruf di atas ascii 117 kembali ke awal
+```
+if (success[i] > 117)
+                    {
+                        success[i] -= 21;
+                        continue;
+                    }
+```
+- Selain itu shift sebanyak 5 ```success[i] += 5;```
+- Kemudian membuat file dan menuliskan pesan ```success``` ke dalam file ```status.txt```
+```
+printf("creating status.txt");
+FILE *fPtr = NULL;
+fPtr = fopen("status.txt", "w");
+fputs(success, fPtr);
+fclose(fPtr);
+```
+### Jawab 3d dan 3e
+```
+ if (argc == 2)
+    {
+        if (strcmp(argv[1], "-z") == 0)
+        {
+            FILE *fPtr = NULL;
+            fPtr = fopen("killer.sh", "w");
+            fprintf(fPtr, "#!/bin/bash\npkill soal3\nrm killer.sh\n");
+            fclose(fPtr);
+        }
 
-### Jawab 3d
-
-### Jawab 3e
-
+        else if (strcmp(argv[1], "-x") == 0)
+        {
+            FILE *fPtr = NULL;
+            fPtr = fopen("killer.sh", "w");
+            fprintf(fPtr, "#!/bin/bash\nkill %d\nrm killer.sh\n", getpid());
+            fclose(fPtr);
+        }
+    }
+```
+- Ketika count argumen == 2 ```if (argc == 2)```
+- Jika argumen ```-z``` maka membuat file ```killer.sh``` yang berisikan ```pkill soal3``` untuk menghentikan semua proses yang berjalan dan ```rm killer.sh``` untuk menghapus dirinya sendiri setelah selssai.
+- Jika argumen ```-x``` maka membuat file ```killer.sh``` yang berisikan ```kill %d``` dengan ```%d``` merupakan ```getpid()``` Daemon untuk menghentikan Daemon dan ```rm killer.sh``` untuk menghapus diri sendiri. Hal ini akan menyebabkan proses yang sedang berjalan tetap selesai hingga melakukan zip.
+- 
 ### Kendala
-
+- Belum tahu penggunaan fork()
+- Bingung bagaimana cara menghentikan proses tetapi proses yang sedang berjalan tetap selesai.
 ### Referensi
 
