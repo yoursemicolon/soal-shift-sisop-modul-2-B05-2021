@@ -270,6 +270,7 @@ menghasilkan output sebagai berikut:
 ### Kendala
 - Bingung dengan penggunaan fork dan exec, awalnya saya kira dengan mendeklasrasikan fork sekali bisa digunakan pada proses lain ternyata tidak bisa. Jadi, saya membuat fungsi func yang gunanya supaya tidak menggunakan fork berulang kali.
 - agak sulit untuk mengerjakan dikarenakan macos error, tau errornya karena seharusnya file foto langsung ter-unzip di folder petshop tetapi ini malah terbentuk 2 folder baru yang muncul entah dari mana seperti gambar dibawah ini:
+<img width="120" alt="Screen Shot 2021-04-25 at 09 16 04" src="https://user-images.githubusercontent.com/72669398/115978029-1aa3dc80-a5a7-11eb-8e30-5a22f7da5665.png">
 
 - ketika mencoba test nomer 2e menggunakan link ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02``` hasil tidak sama dengan jumlah isi file, hasilnya terkali 2, seperti dibawah ini:
 
