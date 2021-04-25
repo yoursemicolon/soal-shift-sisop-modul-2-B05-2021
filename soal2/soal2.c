@@ -6,19 +6,6 @@
 #include<unistd.h>
 #include<dirent.h>
 #include<string.h>
- 
-void eks (char execute[], char *p[])
-{
-    int status;
-    pid_t c_id;
-    c_id = fork();
-    if(c_id == 0){
-        execv(execute, p);
-    }else{
-        ((wait(&status))>0);
-        return;
-    }
-}
 
 char* cutJPG (char*s)
 {
@@ -34,6 +21,19 @@ char* cutJPG (char*s)
         new[n] = s[n];
         new[n] = '\0';
         return new;
+}
+
+void eks (char execute[], char *p[])
+{
+    int status;
+    pid_t c_id;
+    c_id = fork();
+    if(c_id == 0){
+        execv(execute, p);
+    }else{
+        ((wait(&status))>0);
+        return;
+    }
 }
  
 //2a
