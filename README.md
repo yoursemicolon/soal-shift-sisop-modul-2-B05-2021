@@ -375,7 +375,7 @@ if (fork() == 0)
         }
 sleep(1);
 ```
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-a.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-a.png" width="600"></img> <br>
 Di sini menggunakan sleep untuk memastikan proses pembuatan directory selesai sebelum lanjut ke proses selanjutnya.
 ### Jawab 3b
 ```
@@ -437,7 +437,7 @@ if (fork() == 0)
  forcheck++;
 ```
 - Menggunakan ```sleep(5)``` untuk melakukannya setiap 5 detik.
-- ```forcheck++``` akan digunakan saat pembuatan ```status.txt``` dan menandakan loop telah selesai
+- ```forcheck++``` akan digunakan saat pembuatan ```status.txt``` dan menandakan loop telah selesai <br>
 <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-b.png" width="600"></img>
 ### Jawab 3c
 ```
