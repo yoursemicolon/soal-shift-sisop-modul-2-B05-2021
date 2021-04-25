@@ -201,34 +201,54 @@ Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang ber
 - Tidak boleh menggunakan fungsi system(), mkdir(), dan rename().
 - Menggunakan fork dan exec.
 
-**_Source Code_**
-```
-```
-
 ### Jawab 2a
 Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder `“/home/[user]/modul2/petshop”`. Karena bos Loba teledor, dalam zip tersebut bisa berisi folder-folder yang tidak penting, maka program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
 
 _Source Code_
+```C
+//2a
+void BukaZIP()
+{
+    pid_t c_id;
+    int status;
+    c_id = fork();
+    
+    char S[100] = "/home/nadiatiara/pets.zip";
+    char T[100] = "/home/nadiatiara/revisi/petshop";
+ 
+    if (c_id < 0){
+        exit(1);
+    }
+    if(c_id == 0){
+        char *Buat_Folder[] = {"mkdir","-p", T, NULL};
+        eks("/bin/mkdir", Buat_Folder);
+        char *Buka_ZIP[] = {"unzip",S, "-d",T, "*.jpg", NULL};
+        eks("/usr/bin/unzip", Buka_ZIP);
+    }else {
+        while ((wait(&status)) > 0);
+    }
+}
 ```
 
-```
+**PENJELASAN**
 
-**_PENJELASAN_**
-
-**_Output_**
 
 ### Jawab 2b
 Foto peliharaan perlu dikategorikan sesuai jenis peliharaan, maka kamu harus membuat folder untuk setiap jenis peliharaan yang ada dalam zip. Karena kamu tidak mungkin memeriksa satu-persatu, maka program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
 Contoh: Jenis peliharaan kucing akan disimpan dalam `“/petshop/cat”`, jenis peliharaan kura-kura akan disimpan dalam `“/petshop/turtle”`.
 
 _Source Code_
+```C
+//2b
+                        strcat(T, tipe);
+                        char *Buat_Folder[] = {"mkdir", "-p", T, NULL};
+                        eks("/bin/mkdir", Buat_Folder);
+ 
+                        strcpy(n_hewan, nama);
 ```
 
-```
+**PENJELASAN**
 
-**_PENJELASAN_**
-
-**_Output_**
 
 ### Jawab 2c
 Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
@@ -239,13 +259,27 @@ Karena dalam satu foto bisa terdapat lebih dari satu peliharaan maka foto harus 
 Contoh: foto dengan nama `“dog;baro;1_cat;joni;2.jpg”` dipindah ke folder `“/petshop/cat/joni.jpg”` dan `“/petshop/dog/baro.jpg”`.
 
 _Source Code_
+```C
+//2c
+//2d
+                        strcat(nama, ".jpg");
+                        strcat(vp2, res2);
+ 
+                        char *salinfolder[] = {"cp", vp2, T, NULL};
+                        eks("/bin/cp", salinfolder);
+ 
+                        strcpy(txt_p, T);
+                        strcpy(vp3, T);
+                        strcat(vp3, "/");
+                        strcat(vp3, res2);
+                        strcat(T, "/");
+                        strcat(T, nama);
+ 
+                        char *rename_file[] = {"rename_file", vp3, T, NULL};
+                        eks("/bin/mv", rename_file);
 ```
 
-```
-
-**_PENJELASAN_**
-
-**_Output_**
+**PENJELASAN**
 
 ### Jawab 2e
 Di setiap folder buatlah sebuah file `"keterangan.txt"` yang berisi nama dan umur semua peliharaan dalam folder tersebut. **Format harus sesuai contoh**.
@@ -262,12 +296,12 @@ _Source Code_
 
 ```
 
-**_PENJELASAN_**
+**PENJELASAN**
 
 **_Output_**
 
 ### Test Keterangan
-cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi file foto yang ada pada folder masing-masing hewan.
+cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi keterangan pada 2e yang ada pada folder masing-masing hewan.
 menghasilkan output sebagai berikut:
 
 ### Kendala
@@ -275,7 +309,7 @@ menghasilkan output sebagai berikut:
 - agak sulit untuk mengerjakan dikarenakan macos error, tau errornya karena seharusnya file foto langsung ter-unzip di folder petshop tetapi ini malah terbentuk 2 folder baru yang muncul entah dari mana seperti gambar dibawah ini:
 <img width="120" alt="Screen Shot 2021-04-25 at 09 16 04" src="https://user-images.githubusercontent.com/72669398/115978029-1aa3dc80-a5a7-11eb-8e30-5a22f7da5665.png">
 
-- ketika mencoba test nomer 2e menggunakan link ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02``` hasil tidak sama dengan jumlah isi file, hasilnya terkali 2, seperti dibawah ini:
+- ketika mencoba test nomer 2e menggunakan link ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02``` hasil tidak sama dengan jumlah isi keterangan 2e, hasilnya ada 2 keterangan, seperti dibawah ini:
 <img width="278" alt="Screen Shot 2021-04-25 at 02 28 43" src="https://user-images.githubusercontent.com/72669398/115978056-4f179880-a5a7-11eb-98c0-bf5e7b89e499.png">
 
 
