@@ -312,7 +312,7 @@ _Source Code_
 1. folder petshop berisi file foto-foro peliharaan yang sudah di unzip.
 <img width="1311" alt="folder petshop" src="https://user-images.githubusercontent.com/72669398/115989566-36c86d80-a5e9-11eb-9438-cbb6e6a18d40.png">
 2. folder petshop berisi folder-folder nama masing-masing peliharaan dan keterangan berisi nama dan umur peliharaan.
-!(https://user-images.githubusercontent.com/72669398/115989265-c3722c00-a5e7-11eb-9617-1dd9536ad24a.jpg)
+![Isi petshop](https://user-images.githubusercontent.com/72669398/115989764-25339580-a5ea-11eb-8918-fc541d2065d5.jpg)
 3. isi folder salah satu peliharaan. misal: cat.
 !(https://user-images.githubusercontent.com/72669398/115989282-d684fc00-a5e7-11eb-9184-110a9feb6213.jpg)
 4. isi keterangan.txt dari folder cat.
