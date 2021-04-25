@@ -292,14 +292,31 @@ nama : miko
 umur  : 2 tahun
 ```
 _Source Code_
-```
-
+```C
+//2e
+                        strcat(txt_p, "/keterangan.txt");
+                        strcpy(ket_file, "nama : ");
+                        strcat(ket_file, n_hewan);
+                        strcat(ket_file, "\numur : ");
+                        strcat(ket_file, umur);
+                        strcat(ket_file, "tahun\n\n");
+ 
+                        FILE *ket = fopen(txt_p, "a");
+                        fputs(ket_file, ket);
+                        fclose(ket);
 ```
 
 **PENJELASAN**
 
 **Output**
-1. 
+1. folder petshop berisi file foto-foro peliharaan yang sudah di unzip.
+<img width="1311" alt="folder petshop" src="https://user-images.githubusercontent.com/72669398/115989566-36c86d80-a5e9-11eb-9438-cbb6e6a18d40.png">
+2. folder petshop berisi folder-folder nama masing-masing peliharaan dan keterangan berisi nama dan umur peliharaan.
+![Isi petshop](https://user-images.githubusercontent.com/72669398/115989265-c3722c00-a5e7-11eb-9617-1dd9536ad24a.jpg)
+3. isi folder salah satu peliharaan. misal: cat.
+![isi folder cat](https://user-images.githubusercontent.com/72669398/115989282-d684fc00-a5e7-11eb-9184-110a9feb6213.jpg)
+4. isi keterangan.txt dari folder cat.
+![keterangan cat](https://user-images.githubusercontent.com/72669398/115989299-e8ff3580-a5e7-11eb-8b08-9e5786c0c0e5.jpg)
 
 ### Test Keterangan
 cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk menghitung jumlah isi keterangan pada 2e yang ada pada folder masing-masing hewan.
