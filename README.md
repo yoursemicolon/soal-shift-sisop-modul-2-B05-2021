@@ -232,6 +232,7 @@ void BukaZIP()
 
 **PENJELASAN**
 
+Berdasarkan source code diatas, fungsi BukaZIP digunakan untuk meng-Unzip folder pets.zip yang berformat **.jpg** saja dan menghapus folder-folder yang tidak penting, kemudian akan dipindah ke dalam folder baru bernama ```petshop``` . Dikarenakan tidak boleh menggunakan mkdir maka proses dilakukan menggunakan fork dan exec.
 
 ### Jawab 2b
 Foto peliharaan perlu dikategorikan sesuai jenis peliharaan, maka kamu harus membuat folder untuk setiap jenis peliharaan yang ada dalam zip. Karena kamu tidak mungkin memeriksa satu-persatu, maka program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
@@ -249,6 +250,7 @@ _Source Code_
 
 **PENJELASAN**
 
+Berdasarkan source code diatas, digunakan untuk membuat folder baru bernamakan masing-masing peliharaan. co : ```/petshop/cat```
 
 ### Jawab 2c
 Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
