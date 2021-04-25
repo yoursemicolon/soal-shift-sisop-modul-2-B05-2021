@@ -250,6 +250,7 @@ _Source Code_
 
 **PENJELASAN**
 
+Berdasarkan source code diatas, digunakan untuk membuat folder baru kosong yang bernamakan masing-masing peliharaan dan nanti akan diisi oleh file foto-foto peliharaan dengan source code nomor 2c. co : ```/petshop/cat```.
 
 ### Jawab 2c
 Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
