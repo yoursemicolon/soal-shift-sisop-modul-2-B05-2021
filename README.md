@@ -232,7 +232,6 @@ void BukaZIP()
 
 **PENJELASAN**
 
-Berdasarkan source code diatas, fungsi BukaZIP digunakan untuk meng-Unzip folder pets.zip yang berformat **.jpg** saja dan menghapus folder-folder yang tidak penting, kemudian akan dipindah ke dalam folder baru bernama ```petshop``` . Dikarenakan tidak boleh menggunakan mkdir maka proses dilakukan menggunakan fork dan exec.
 
 ### Jawab 2b
 Foto peliharaan perlu dikategorikan sesuai jenis peliharaan, maka kamu harus membuat folder untuk setiap jenis peliharaan yang ada dalam zip. Karena kamu tidak mungkin memeriksa satu-persatu, maka program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
@@ -250,7 +249,6 @@ _Source Code_
 
 **PENJELASAN**
 
-Berdasarkan source code diatas, digunakan untuk membuat folder baru bernamakan masing-masing peliharaan. co : ```/petshop/cat```
 
 ### Jawab 2c
 Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
@@ -283,8 +281,6 @@ _Source Code_
 
 **PENJELASAN**
 
-Berdasarkan source code 2c dan 2d diatas, soal 2c digunakan untuk memindahkan foto peliharaan ke dalam folder sesuai dengan kategori yang sesuai. kemudian, soal 2d digunakan untuk memindahkan foto peliharaan yang di dalam satu foto bisa terdapat lebih dari satu foto peliharaan dan di sesuaikan berdasarnakn nama kategori hewannya.
-
 ### Jawab 2e
 Di setiap folder buatlah sebuah file `"keterangan.txt"` yang berisi nama dan umur semua peliharaan dalam folder tersebut. **Format harus sesuai contoh**.
 
@@ -311,8 +307,6 @@ _Source Code_
 ```
 
 **PENJELASAN**
-
-Berdasarkan source code pada soal 2e ini, akan membuat file ```keterangan.txt``` . kemudian akan menyalin ```"nama : "``` ke dalam ket_file. lalu, menggabungkan data nama hewan, menggabungkan umur, serta menambahkan kata tahun setelah data umur.
 
 **Output**
 - folder petshop berisi file foto-foro peliharaan yang sudah di unzip.
@@ -381,6 +375,7 @@ if (fork() == 0)
         }
 sleep(1);
 ```
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-a.png" width="600"></img>
 Di sini menggunakan sleep untuk memastikan proses pembuatan directory selesai sebelum lanjut ke proses selanjutnya.
 ### Jawab 3b
 ```
@@ -443,6 +438,7 @@ if (fork() == 0)
 ```
 - Menggunakan ```sleep(5)``` untuk melakukannya setiap 5 detik.
 - ```forcheck++``` akan digunakan saat pembuatan ```status.txt``` dan menandakan loop telah selesai
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-b.png" width="600"></img>
 ### Jawab 3c
 ```
 if (forcheck == 10) // pada saat awal menjalankan program langsung membuat file status.txt jadi menggunakan check untuk membuat di akhir loop
@@ -491,6 +487,9 @@ fPtr = fopen("status.txt", "w");
 fputs(success, fPtr);
 fclose(fPtr);
 ```
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-c.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-c2.png" width="600"></img>
+
 ### Jawab 3d dan 3e
 ```
  if (argc == 2)
@@ -514,8 +513,9 @@ fclose(fPtr);
 ```
 - Ketika count argumen == 2 ```if (argc == 2)```
 - Jika argumen ```-z``` maka membuat file ```killer.sh``` yang berisikan ```pkill soal3``` untuk menghentikan semua proses yang berjalan dan ```rm killer.sh``` untuk menghapus dirinya sendiri setelah selssai.
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e1.png" width="600"></img>
 - Jika argumen ```-x``` maka membuat file ```killer.sh``` yang berisikan ```kill %d``` dengan ```%d``` merupakan ```getpid()``` Daemon untuk menghentikan Daemon dan ```rm killer.sh``` untuk menghapus diri sendiri. Hal ini akan menyebabkan proses yang sedang berjalan tetap selesai hingga melakukan zip.
-- 
+- <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e2.png" width="600"></img>
 ### Kendala
 - Belum tahu penggunaan fork()
 - Bingung bagaimana cara menghentikan proses tetapi proses yang sedang berjalan tetap selesai.
