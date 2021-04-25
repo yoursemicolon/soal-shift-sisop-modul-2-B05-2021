@@ -193,21 +193,87 @@ Hasil eksekusi program: <br>
 * http://www.cplusplus.com/reference/ctime/localtime/
 
 <a name="soal2"></a>
-## Soal 2
+# Soal 2
+Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang berisi banyak sekali foto peliharaan dan Ia diperintahkan untuk mengkategorikan foto-foto peliharaan tersebut. Loba merasa kesusahan melakukan pekerjaanya secara manual, apalagi ada kemungkinan ia akan diperintahkan untuk melakukan hal yang sama. Kamu adalah teman baik Loba dan Ia meminta bantuanmu untuk membantu pekerjaannya.
+
+**Note:**
+- Setiap data peliharaan disimpan sebagai nama foto dengan format `[jenis peliharaan]:[nama peliharaan]:[umur peliharaan dalam tahun]`. Jika terdapat lebih dari satu peliharaan, data dipisahkan menggunakan _underscore(_)_.
+- Tidak boleh menggunakan fungsi system(), mkdir(), dan rename().
+- Menggunakan fork dan exec.
+
+**_Source Code_**
+```
+```
 
 ### Jawab 2a
+Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder `“/home/[user]/modul2/petshop”`. Karena bos Loba teledor, dalam zip tersebut bisa berisi folder-folder yang tidak penting, maka program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
+
+_Source Code_
+```
+
+```
+
+**_PENJELASAN_**
+
+**_Output_**
 
 ### Jawab 2b
+Foto peliharaan perlu dikategorikan sesuai jenis peliharaan, maka kamu harus membuat folder untuk setiap jenis peliharaan yang ada dalam zip. Karena kamu tidak mungkin memeriksa satu-persatu, maka program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
+Contoh: Jenis peliharaan kucing akan disimpan dalam `“/petshop/cat”`, jenis peliharaan kura-kura akan disimpan dalam `“/petshop/turtle”`.
+
+_Source Code_
+```
+
+```
+
+**_PENJELASAN_**
+**_Output_**
 
 ### Jawab 2c
+Setelah folder kategori berhasil dibuat, programmu akan memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
+Contoh: `“/petshop/cat/joni.jpg”`. 
 
 ### Jawab 2d
+Karena dalam satu foto bisa terdapat lebih dari satu peliharaan maka foto harus di pindah ke masing-masing kategori yang sesuai. 
+Contoh: foto dengan nama `“dog;baro;1_cat;joni;2.jpg”` dipindah ke folder `“/petshop/cat/joni.jpg”` dan `“/petshop/dog/baro.jpg”`.
+
+_Source Code_
+```
+
+```
+
+**_PENJELASAN_**
+**_Output_**
 
 ### Jawab 2e
+Di setiap folder buatlah sebuah file `"keterangan.txt"` yang berisi nama dan umur semua peliharaan dalam folder tersebut. **Format harus sesuai contoh**.
+
+```
+nama : joni
+umur  : 3 tahun
+
+nama : miko
+umur  : 2 tahun
+```
+_Source Code_
+```
+
+```
+
+**_PENJELASAN_**
+**_Output_**
+
+**Test Keterangan**
+cek test keterangan menggunakan link yang diberikan asuji : ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02```, gunanya untuk mengetest jumlah 
+menghasilkan output sebagai berikut:
 
 ### Kendala
+- Bingung dengan penggunaan fork dan exec, awalnya saya kira dengan mendeklasrasikan fork sekali bisa digunakan pada proses lain ternyata tidak bisa. Jadi, saya membuat fungsi func yang gunanya supaya tidak menggunakan fork berulang kali.
+- agak sulit untuk mengerjakan dikarenakan macos error, tau errornya karena seharusnya file foto langsung ter-unzip di folder petshop tetapi ini malah terbentuk 2 folder baru yang muncul entah dari mana seperti gambar dibawah ini:
 
-### Referensi
+- ketika mencoba test nomer 2e menggunakan link ```https://gist.github.com/segi3/0f90621bb2d118b0b6fadc98d5835b02``` hasil tidak sama dengan jumlah isi file, hasilnya terkali 2, seperti dibawah ini:
+
+
 
 <a name="soal3"></a>
 ## Soal 3
