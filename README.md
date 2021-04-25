@@ -513,9 +513,9 @@ fclose(fPtr);
 ```
 - Ketika count argumen == 2 ```if (argc == 2)```
 - Jika argumen ```-z``` maka membuat file ```killer.sh``` yang berisikan ```pkill soal3``` untuk menghentikan semua proses yang berjalan dan ```rm killer.sh``` untuk menghapus dirinya sendiri setelah selssai.
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e1.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e2.png" width="600"></img>
 - Jika argumen ```-x``` maka membuat file ```killer.sh``` yang berisikan ```kill %d``` dengan ```%d``` merupakan ```getpid()``` Daemon untuk menghentikan Daemon dan ```rm killer.sh``` untuk menghapus diri sendiri. Hal ini akan menyebabkan proses yang sedang berjalan tetap selesai hingga melakukan zip.
-- <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e2.png" width="600"></img>
+- <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e1.png" width="600"></img>
 ### Kendala
 - Belum tahu penggunaan fork()
 - Bingung bagaimana cara menghentikan proses tetapi proses yang sedang berjalan tetap selesai.
