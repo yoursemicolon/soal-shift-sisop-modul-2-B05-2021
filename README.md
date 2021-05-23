@@ -45,7 +45,7 @@ void makeFolders() {
 }
 ```
 Dari hasil eksekusi, terbuat folder ```Musyik, Fylm dan Pyoto```. <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-a.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal1-a.png" width="600"></img>
 
 ### Jawab 1b
 Mendownload zip file dari link yang telah disediakan. Kami memanggil fungsi ```downloadFiles()``` dari fungsi ```main``` dan menggunakan ```exec``` untuk memanggil command ```wget```.
@@ -64,7 +64,7 @@ void downloadFiles(int indeks) {
 }
 ```
 Dari hasil eksekusi di atas, terdownload file zip yang bernama ```Musik_for_Stevany```, ```Foto_for_Stevany``` dan ```Film_for_Stevany```. <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-b.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal1-b.png" width="600"></img>
 
 ### Jawab 1c
 Extract ```zip``` file yang didownload dengan command ```unzip```.
@@ -117,7 +117,7 @@ void moveFiles(int indeks) {
 }
 ```
 Berikut hasil eksekusinya. <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-d.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal1-d.png" width="600"></img>
 
 ### Jawab 1e
 Untuk menjalankannya secara otomatis pada 09 April 16.22 WIB, digunakan process ```daemon```. Untuk menyesuaikan dengan setting waktu dengan local time, kami menggunakan library ```time.h``` dan ```tm structure``` pada C.
@@ -142,7 +142,7 @@ if(isNowTheBirthday(month, day, minute) && bday_hour-6 == hour) {
 }
 ```
 Hasil eksekusi: <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-e.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal1-e.png" width="600"></img>
 
 ### Jawab 1f
 Tepat pada 09 April 22.22 WIB, ```zip``` semua folder dengan nama ```Lopyu_Stevany.zip```. Masih menggunakan proses ```daemon``` dan dengan setting waktu yang sudah disesuaikan. Berikut perintah untuk memeriksa setting waktunya.
@@ -179,7 +179,7 @@ void removeExtractFolders() {
 }
 ```
 Hasil eksekusi program: <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal1-f.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal1-f.png" width="600"></img>
 
 ### Kendala
 * Awalnya program tidak berjalan ketika di execute, setelah kodingan dimasukkan ke dalam fungsi terpisah baru bisa tereksekusi.
@@ -375,7 +375,7 @@ if (fork() == 0)
         }
 sleep(1);
 ```
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-a.png" width="600"></img> <br>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-a.png" width="600"></img> <br>
 Di sini menggunakan sleep untuk memastikan proses pembuatan directory selesai sebelum lanjut ke proses selanjutnya.
 ### Jawab 3b
 ```
@@ -438,7 +438,7 @@ if (fork() == 0)
 ```
 - Menggunakan ```sleep(5)``` untuk melakukannya setiap 5 detik.
 - ```forcheck++``` akan digunakan saat pembuatan ```status.txt``` dan menandakan loop telah selesai <br>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-b.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-b.png" width="600"></img>
 ### Jawab 3c
 ```
 if (forcheck == 10) // pada saat awal menjalankan program langsung membuat file status.txt jadi menggunakan check untuk membuat di akhir loop
@@ -487,8 +487,8 @@ fPtr = fopen("status.txt", "w");
 fputs(success, fPtr);
 fclose(fPtr);
 ```
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-c.png" width="600"></img>
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-c2.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-c.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-c2.png" width="600"></img>
 
 ### Jawab 3d dan 3e
 ```
@@ -513,9 +513,9 @@ fclose(fPtr);
 ```
 - Ketika count argumen == 2 ```if (argc == 2)```
 - Jika argumen ```-z``` maka membuat file ```killer.sh``` yang berisikan ```pkill soal3``` untuk menghentikan semua proses yang berjalan dan ```rm killer.sh``` untuk menghapus dirinya sendiri setelah selssai.
-<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e2.png" width="600"></img>
+<img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-e2.png" width="600"></img>
 - Jika argumen ```-x``` maka membuat file ```killer.sh``` yang berisikan ```kill %d``` dengan ```%d``` merupakan ```getpid()``` Daemon untuk menghentikan Daemon dan ```rm killer.sh``` untuk menghapus diri sendiri. Hal ini akan menyebabkan proses yang sedang berjalan tetap selesai hingga melakukan zip.
-- <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshoots/soal3-e1.png" width="600"></img>
+- <img src="https://github.com/yoursemicolon/soal-shift-sisop-modul-2-B05-2021/blob/main/screenshots/soal3-e1.png" width="600"></img>
 ### Kendala
 - Belum tahu penggunaan fork()
 - Bingung bagaimana cara menghentikan proses tetapi proses yang sedang berjalan tetap selesai.
